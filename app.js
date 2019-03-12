@@ -20,3 +20,10 @@ const httpServer = http.createServer((req, res) => {
     res.writeHead(307, {'Location': 'https://' + req.headers['host'] + req.url});
     res.end();
 });
+
+httpServer.listen(httpPort, (err) => {
+    if(err) {
+        return console.log("Something bad happened (http)...");
+    }
+    console.log("Server (http) is listening on port " + httpPort);
+});
